@@ -4,21 +4,38 @@
     <link rel="stylesheet" th:href="@{/static/css/main.css}">
 </head>
 <body>
-<nav th:replace="partials/navbar :: navbar"></nav>
 
+<video autoplay muted loop id="myVideo">
+    <source src="/video/tortillas.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-6">
-            <h1 class="snackeria">Snackeria</h1>
-        </div>
-        <div class="col-6">
-            <h2>Bienvenidos!</h2>
-            <h3>Welcome to San Antonio's favorite local snacks!</h3>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col">
+                <h1 class="display-4 snackeria">Snackeria</h1>
+                <h2 class="lead orange">San Antonio Latina-owned Restaurants</h2>
+                <a href="/sign-up">
+                    <button type="button" class="btn btn-outline-warning">Sign up</button>
+                </a>
+                <a href="/login">
+                    <button type="button" class="btn btn-outline-warning">Log in</button>
+                </a>
+                <a href="/about">
+                    <button type="button" class="btn btn-outline-warning">About</button>
+                </a>
+            </div>
+
+            <div class="col">
+                <h2>¡Bienvenidos al club! Log in and discover delicious eats and treats. Don't forget to show some love for your favorite
+                    restaurants. ¡Provecho!</h2>
+            </div>
         </div>
     </div>
-</div>
 
+</div>
 
 <th:block th:replace="partials/scripts :: scripts"></th:block>
 </body>
