@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="partials/head :: head('Home')"></head>
-
-
+<head th:replace="partials/head :: head('Home')">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+</head>
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<div class="container">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <h3>hello</h3>
+        <div class="col-6">
+            <h1 class="snackeria">Snackeria</h1>
         </div>
-        <div class="col">
-            <h3>from</h3>
-        </div>
-        <div class="col">
-            <h3>ann</h3>
+        <div class="col-6">
+            <h2>Bienvenidos!</h2>
+            <h3>Welcome to San Antonio's favorite local snacks!</h3>
         </div>
     </div>
 </div>
-
-
 
 
 <th:block th:replace="partials/scripts :: scripts"></th:block>
