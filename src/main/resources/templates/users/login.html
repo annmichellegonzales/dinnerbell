@@ -7,35 +7,37 @@
 <nav th:replace="partials/navbar :: navbar"></nav>
 
 <div class="container">
+    <div class="card mt-5">
+        <div class="row">
+            <div class="col align-self-center text-center">
+<!--                IMAGE-->
+                <img class="concha" src="/img/concha.jpeg" alt="concha">
+                <div class="content_container mt-2 p-1">
 
-    <div class="content_container">
-
-        <h1>Login</h1>
-        <div class="login-content">
-
-            <div th:if="${param.error}">
-                Invalid Username and Password.
+<!--                    LOGIN-->
+                    <h1>Login</h1>
+                    <div class="login-content">
+                        <div th:if="${param.error}">
+                            Invalid Username and Password.
+                        </div>
+                        <div th:if="${param.logout}">
+                            You have been logged out.
+                        </div>
+                        <form class="mt-2" th:action="@{/login}" th:method="post">
+                            <label class="userentry" for="username">Username</label>
+                            <br>
+                            <input id="username" name="username" type="text"/>
+                            <br><br>
+                            <label class="userentry" for="password">Password</label>
+                            <br>
+                            <input id="password" name="password" type="password"/>
+                            <br><br>
+                            <input class="btn btn-outline-warning mb-4" type="submit" value="Submit"/>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div th:if="${param.logout}">
-                You have been logged out.
-            </div>
-
-            <form th:action="@{/login}" th:method="post">
-                <br>
-                <label for="username">Username</label>
-                <input id="username" name="username" type="text"/>
-                <br>
-                <br>
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password"/>
-                <br>
-                <input type="submit" value="Submit"/>
-            </form>
-
         </div>
-        <!--    <div class="dish_img">-->
-        <!--      <img src="img/plainplate.png">-->
-        <!--    </div>-->
     </div>
 </div>
 

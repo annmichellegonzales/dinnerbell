@@ -5,58 +5,64 @@
 <body>
 <nav th:replace="partials/navbar :: navbar"></nav>
 
-<div class="container">
-    <div class="row">
-        <h2>Sign Up</h2><br>
-        <div class="signup-content">
-            <form th:action="@{/sign-up}" th:method="POST" th:object="${user}">
-                <h4>We would love to have you join our table!</h4>
-                <h5>Please enter your user information below.</h5>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input name="username" id="username" th:field="*{username}" type="text" class="form-control"
-                           placeholder="What should we call you?" required>
+<div class="container m-4 p-2">
+    <div class="card mt-5">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <img class="bagels" src="/img/bagel-eyes.jpeg">
+            </div>
+            <div class="col-12 col-lg-8 text-center">
+                <h2>Sign Up</h2><br>
+                <div class="signup-content">
+                    <form th:action="@{/sign-up}" th:method="POST" th:object="${user}">
+                        <h5>Please enter your user information below.</h5>
+                        <!--                        <div class="form-group">-->
+                        <label for="username">Username</label>
+                        <input name="username" id="username" th:field="*{username}" type="text" class="form-control"
+                               placeholder="What should we call you?" required>
+                        <!--                        </div>-->
+                        <!--                        <div class="form-group">-->
+                        <label for="password">Password</label>
+                        <input name="password" id="password" th:field="*{password}" type="password"
+                               class="form-control"
+                               placeholder="Keep it secret. Keep it safe!" pattern=".{8,}"
+                               title="Must contain at least 8 characters" required autocomplete="off">
+                        <!--                        </div>-->
+                        <!--                        <div class="form-group">-->
+                        <label>Email address</label>
+                        <input name="email" type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Enter email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                               title="Invalid email address" required>
+                        <!--                        </div>-->
+                        <!--                        <div class="form-check">-->
+
+
+                        <label class="form-check-label">
+                            <input name="newsletter check" type="checkbox" class="form-check-input btn-outline-warning">
+                            Subscribe me to the newsletter!
+                        </label>
+
+                        <!--                        </div>-->
+                        <br>
+                        <h5>Snackeria features the tastiest local restaurants
+                            for our community to explore.</h5>
+                        <div class="form-check">
+                            <input class="form-check-input btn-outline-warning" name="isBusiness"
+                                   th:checked="${user.isBusiness}"
+                                   type="checkbox" id="flexCheckDefault">
+
+
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Are you a restaurant owner? Check this box to be featured!
+                            </label>
+
+
+                        </div>
+                        <br>
+                        <button name="submit" type="submit" class="btn btn-outline-warning">Submit</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input name="password" id="password" th:field="*{password}" type="password" class="form-control"
-                           placeholder="Keep it secret. Keep it safe!" pattern=".{8,}"
-                           title="Must contain at least 8 characters" required autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label>I am a... </label>
-                    <select name="user-type" class="form-control">
-                        <option selected disabled></option>
-                        <option>Casual Eater</option>
-                        <option>Foodie</option>
-                        <option>Just Hungry</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input name="email" type="email" class="form-control" aria-describedby="emailHelp"
-                           placeholder="Enter email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                           title="Invalid email address" required>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input name="newsletter check" type="checkbox" class="form-check-input">
-                        Subscribe me to the newsletter!
-                    </label>
-                </div>
-                <br>
-                <h5>DinnerBell features the tastiest local restaurants
-                    for our community to explore.</h5>
-                <div class="form-check">
-                    <input class="form-check-input" name="isBusiness" th:checked="${user.isBusiness}"
-                           type="checkbox" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Are you a restaurant owner? Check this box to be featured!
-                    </label>
-                </div>
-                <br>
-                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
