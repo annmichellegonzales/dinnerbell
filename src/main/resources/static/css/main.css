@@ -71,5 +71,9 @@ body {
 }
 
 .bagels {
-    width: 400px;
+    width: 100%;
+}
+
+.vermillion {
+    color: #D62900;
 }
